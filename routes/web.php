@@ -15,9 +15,7 @@ use App\Http\Controllers\CategoriaController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [CategoriaController::class, 'home']);
 
 Route::resource('/produtos', ProdutoController::class);
 Route::resource('/categoria', CategoriaController::class);

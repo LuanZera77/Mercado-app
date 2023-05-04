@@ -7,15 +7,15 @@
     <title>@yield('title')</title>
 
     <!-- Bootstrap 5 -->
-    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 
 </head>
 <body>
     
     <main class="container d-flex justify-content-center">
 
-        <section class="row justify-content-center">
-            <section class='card col-4 my-5'>    
+        <section class="row d-flex justify-content-center align-items-center">
+            <section class='card col-12 my-5'>    
     
                 <section class="card-body">
     

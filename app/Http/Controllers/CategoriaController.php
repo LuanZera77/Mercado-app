@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
 {
+
+    public function home(){
+        return view('home', ['categoria' => Categoria::orderByDesc('id')->get()]);
+    }
     
     public function index()
     {
@@ -19,7 +23,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('categoria.create');
     }
 
     /**
@@ -53,7 +57,7 @@ class CategoriaController extends Controller
      */
     public function edit(Categoria $categoria)
     {
-        return view('edit', ['categoria' => $categoria]);
+        return view('categoria.edit', ['categoria' => $categoria]);
     }
 
     /**

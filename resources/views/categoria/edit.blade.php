@@ -5,19 +5,19 @@
 
 @section('content')
 
-    <form action="{{route('produtos.edit', $produto->id)}}" method="post">
+    <form action="{{route('categoria.edit', $categoria->id)}}" method="post">
 
         @csrf
         
         @method("PUT")
                         
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Username" aria-label="Nome" aria-describedby="NomeCategoria" value="">
+            <input type="text" class="form-control" placeholder="Username" aria-label="Nome" aria-describedby="NomeCategoria" value="{{$categoria->nome}}">
           </div>
 
         <div class="input-group mb-3">
             <input type="file" class="form-control" id="FotoCategoria">
-            <label class="input-group-text" for="fotoCategoria">Adicionar imagem</label>
+            <label class="input-group-text" for="fotoCategoria">Editar imagem</label>
         </div>
 
         <input type="submit" value="Editar" class="btn btn-outline-success m-2">

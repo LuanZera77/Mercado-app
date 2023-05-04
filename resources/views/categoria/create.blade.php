@@ -5,22 +5,18 @@
 
 @section('content')
 
-    <form action="{{route('produtos.store', $produto->id)}}" method="post">
+    <form action="{{route('categoria.store')}}" method="post">
 
-        @csrf
-        
-        @method("PUT")
-                        
+        @csrf                      
         <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Username" aria-label="Nome" aria-describedby="NomeCategoria">
           </div>
 
         <div class="input-group mb-3">
             <input type="file" class="form-control" id="FotoCategoria">
-            <label class="input-group-text" for="fotoCategoria">Adicionar imagem</label>
         </div>
 
-        <input type="submit" value="Editar" class="btn btn-outline-success m-2">
+        <input type="submit" value="Cadastrar" class="btn btn-outline-success m-2">
         <input type="button" value="Cancelar" class="btn btn-outline-danger">
 
     </form> 
