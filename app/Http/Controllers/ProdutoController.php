@@ -19,7 +19,8 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        return view('produto.create');
+
+        return view('produto.create', ['categoria'=> Categoria::all()]);
     }
 
     /**

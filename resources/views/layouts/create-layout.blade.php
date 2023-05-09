@@ -9,6 +9,8 @@
     <!-- Bootstrap 5 -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 
+    <script src="https://kit.fontawesome.com/e1b86b0aaa.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     

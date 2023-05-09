@@ -5,7 +5,7 @@
 
 @section('content')
 
-        <form action="{{route('usuario.store')}}" method="post">
+        <form action="{{route('produtos.store')}}" method="post">
 
             @csrf
 
@@ -23,6 +23,15 @@
                 <input type="file" class="form-control" id="Foto">
                 <label class="input-group-text" for="foto">Upload</label>
             </div>
+
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Categorias</label>
+                <select class="form-select" id="inputGroupSelect01">
+                    @foreach ($categoria as $item)
+                        <option value="{{$item->id}}">{{$item->nome}}</option>
+                    @endforeach
+                </select>
+              </div>
 
             <input type="submit" value="Cadastrar" class="btn btn-outline-success m-2">
             <input type="button" value="Cancelar" class="btn btn-outline-danger">
