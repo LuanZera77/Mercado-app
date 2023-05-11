@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('categoria',function (Blueprint $table) {
         $table->id();
         $table->string('nome');
-        $table->string('imagem');
+        $table->binary('imagem')->nullable;
         }); 
     }
 
