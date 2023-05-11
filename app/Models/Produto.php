@@ -10,6 +10,7 @@ class Produto extends Model
     use HasFactory;
 
     // protected $table = 'produto';
+    public $timestamps = false;
 
     public function categoria(){
         return $this->belongsTo('App\Models\Categoria');

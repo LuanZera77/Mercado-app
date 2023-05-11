@@ -29,13 +29,13 @@ class ProdutoController extends Controller
     public function store(Request $request)
     {
         $produto = new Produto();
-        $produto->name = $request->name;
+        $produto->nome = $request->nome;
         $produto->preco = $request->preco;
         $produto->imagem = $request->imagem;
-        $produto->categoria = $request->categoria;
+        $produto->categoria_id = $request->categoria;
 
         if($produto->save()){
-            return redirect()->route('produto.index');
+            return redirect()->route('home');
         }else{
             dd("Erro");
         }
@@ -69,7 +69,7 @@ class ProdutoController extends Controller
         $produto->categoria = $request->categorias;
 
         if($produto->save()){
-            return redirect()->route('produto.index');
+            return redirect()->route('home');
         }else{
             dd("Erro");
         }
@@ -80,7 +80,7 @@ class ProdutoController extends Controller
     public function destroy(Produto $produto)
     {
         if($produto->delete()){
-            return redirect()->route('produto.index');
+            return redirect()->route('home');
         }else{
             dd("Erro");
         }

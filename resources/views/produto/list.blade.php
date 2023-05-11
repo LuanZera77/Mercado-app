@@ -33,19 +33,19 @@
                               <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalToggleLabel">{{$item->nome}}</h5>
+                                    <h5 class="modal-title" id="exampleModalToggleLabel">{{$produto->nome}}</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                   </div>
                                   <div class="modal-body">
                                       <ul class="list-group">
-                                        <li class="list-group-item"><b>ID do produto:</b>{{$item->id}}</li>
-                                        <li class="list-group-item"><b>Nome:</b> {{$item->nome}}</li>
-                                        <li class="list-group-item"><b>Preço:</b> R$ {{$item->preco}}</li>
+                                        <li class="list-group-item"><b>ID do produto:</b>{{$produto->id}}</li>
+                                        <li class="list-group-item"><b>Nome:</b> {{$produto->nome}}</li>
+                                        <li class="list-group-item"><b>Preço:</b> R$ {{$produto->preco}}</li>
                                       </ul>
                                   </div>
                                   <div class="modal-footer">
-                                    <a class="btn btn-primary" data-bs-toggle="modal" href="{{route('produtos.edit', $item->id)}}" role="button">Editar</a>
-                                      <form action="{{route('produtos.destroy', $item->id)}}" method="post">
+                                    <a class="btn btn-primary" data-bs-toggle="modal" href="{{route('produtos.edit', $produto->id)}}" role="button">Editar</a>
+                                      <form action="{{route('produtos.destroy', $produto->id)}}" method="post">
 
                                         @csrf
                                         

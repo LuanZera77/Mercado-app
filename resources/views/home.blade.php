@@ -4,13 +4,15 @@
 
 @section('content')
 
-    <section class="card-group">
+    <!-- Card group -->
+    <div class="row">
         @foreach($categoria as $setor)
+            
+            <!-- Card -->
+            <div class="card my-4 col-10">
 
-            <section class="card container">
-
+                <!-- Card header -->
                 <div class="card-header">
-
                     <div class="d-flex">
                         <div class="flex-shrink-0">
                           <img src="..." alt="...">
@@ -19,10 +21,11 @@
                             <!-- Nome da Categoria -->
                             <h3>{{$setor->nome}}</h3>
                         </div>
-                      </div>
-
+                    </div>
                 </div>
+                <!-- End Card header -->
 
+                <!-- Card body -->
                 <div class="card-body">
                    
                         @foreach($setor->produtos as $item)
@@ -98,20 +101,21 @@
                                             </div>
                                           </div>
                                         </div>
-                                      </div>                                     
-                                    
-
+                                      </div>                                                                 
                                     </td>
                                 </tr>           
-                                </tbody>
-                            </table>
-
-                        @endforeach
-
+                              </tbody>
+                          </table>    
+                      @endforeach
                 </div>
-            </section>
+                <!-- End card body -->
+                
+              
+            </div>
+            <!--End card-->
 
         @endforeach
-    </section>
+    </div>
+    <!--End Card group-->
 
 @endsection

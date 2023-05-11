@@ -37,7 +37,7 @@ class CategoriaController extends Controller
         $categoria->imagem = $request->imagem;
 
         if($categoria->save()){
-            return redirect()->route('categoria.index');
+            return redirect()->route('home');
         }else{
             dd("Erro");
         }
@@ -47,29 +47,29 @@ class CategoriaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Categoria $categoria)
+    public function show(Categoria $categorium)
     {
-        return view('show', ['categoria' => $categoria]);
+        return view('show', ['categoria' => $categorium]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Categoria $categoria)
+    public function edit(Categoria $categorium)
     {
-        return view('categoria.edit', ['categoria' => $categoria]);
+        return view('categoria.edit', ['categoria' => $categorium]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Categoria $categoria)
+    public function update(Request $request, Categoria $categorium)
     {
-        $categoria->nome = $request->nome;
-        $categoria->imagem = $request->imagem;
+        $categorium->nome = $request->nome;
+        $categorium->imagem = $request->imagem;
 
-        if($categoria->save()){
-            return redirect()->route('categoria.index');
+        if($categorium->save()){
+            return redirect()->route('home');
         }else{
             dd("Erro");
         }
@@ -77,10 +77,11 @@ class CategoriaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Categoria $categoria)
+    public function destroy(Categoria $categorium)
     {
-        if($categoria->delete()){
-            return redirect()->route('categoria.index');
+        
+        if($categorium->delete()){
+            return redirect()->route('home');
         }else{
             dd("Erro");
         }

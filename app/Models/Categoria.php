@@ -10,6 +10,7 @@ class Categoria extends Model
     use HasFactory;
 
     protected $table = 'categoria';
+    public $timestamps = false;
 
     public function produtos(){
         return $this->hasMany('App\Models\Produto');

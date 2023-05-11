@@ -15,6 +15,8 @@ return new class extends Migration
         $table->id();
         $table->string('nome');
         $table->binary('imagem')->nullable;
+
+        $table->timestamps();
         }); 
     }
 
