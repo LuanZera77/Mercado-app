@@ -41,7 +41,7 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                  <th scope="row">{{ '/categorias/' . $item->imagem }}</th>
+                                  <th scope="row"><img src="/categorias/{{$item->imagem}}" alt=""></th>
                                     <td>{{$item->nome}}</td>
                                     <td>{{$item->preco}}</td>
                                     <td>

@@ -1,4 +1,4 @@
-<?php
+'<?php
 
 namespace App\Http\Controllers;
 
@@ -30,26 +30,25 @@ class CategoriaController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        
-        $input = $request->validate([
-            'name' => ['required', 'string'],
-            'imagem' => ['required','file']
-        ]);
+{
+    $input = $request->validate([
+        'name' => ['required', 'string'],
+        'imagem' => ['required', 'file']
+    ]);
 
-        $categoria = new Categoria();
-        $categoria->nome = $request->nome;
-        $categoria->imagem = $request->imagem;
+    $categoria = new Categoria();
+    $categoria->nome = $request->name;
 
-        $input['logo']->store('categorias', 'public');
+    $imagemPath = $request->file('imagem')->store('categorias', 'public');
+    $categoria->imagem = $imagemPath;
 
-        if($categoria->save()){
-            return redirect()->route('home');
-        }else{
-            dd("Erro");
-        }
-
+    if ($categoria->save()) {
+        return redirect()->route('home');
+    } else {
+        dd("Erro");
     }
+}
+
 
     /**
      * Display the specified resource.
@@ -95,3 +94,4 @@ class CategoriaController extends Controller
     }
 
 }
+'
