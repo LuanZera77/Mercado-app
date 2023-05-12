@@ -5,7 +5,7 @@
 
 @section('content')
 
-    <form action="{{route('categoria.store')}}" method="post">
+    <form enctype="multipart/form-data" action="{{route('categoria.store')}}" method="post">
 
         @csrf                      
         <div class="input-group mb-3">

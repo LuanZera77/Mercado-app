@@ -37,7 +37,7 @@
                                   <div class="modal-body">
                                       <ul class="list-group">
                                         <li class="list-group-item"><b>ID do produto:</b>{{$item->id}}</li>
-                                        <li class="list-group-item"><b>Nome:</b> {{$item->nome}}</li>
+                                        <li class="list-group-item"><b>Nome do setor:</b> {{$item->nome}}</li>
                                       </ul>
                                   </div>
                                   <div class="modal-footer">
@@ -69,7 +69,7 @@
                 
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                                <button type="button" class="btn nbt-secondary" data-bs-dismiss="modal">Fechar</button>
                                                 <input type="submit" class="btn btn-danger" value="Apagar">
                                             </div>
                                             </div>

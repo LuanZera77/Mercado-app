@@ -14,14 +14,14 @@
 </head>
 <body>
     
-    <main class="container d-flex justify-content-center">
+    <main class="container">
 
         <section class="row d-flex justify-content-center align-items-center">
-            <section class='card col-12 my-5'>    
+            <section class='card col-4 '>    
     
                 <section class="card-body">
     
-                    <h1 class="card-title">@yield('form')</h1>
+                    <h2 class="card-title text-center">@yield('form')</h2>
     
                     <hr>
     

@@ -12,11 +12,11 @@
         @method("PUT")
                         
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Username" aria-label="Nome" aria-describedby="NomeCategoria" value="{{$categoria->nome}}">
+            <input type="text" name="nome" class="form-control" placeholder="Username" aria-label="Nome" aria-describedby="NomeCategoria" value="{{$categoria->nome}}">
           </div>
 
         <div class="input-group mb-3">
-            <input type="file" class="form-control" id="FotoCategoria">
+            <input type="file" name="imagem" class="form-control" id="FotoCategoria">
             <label class="input-group-text" for="fotoCategoria">Editar imagem</label>
         </div>
 

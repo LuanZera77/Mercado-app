@@ -32,9 +32,16 @@ class CategoriaController extends Controller
     public function store(Request $request)
     {
         
+        $input = $request->validate([
+            'name' => ['required', 'string'],
+            'imagem' => ['required','file']
+        ]);
+
         $categoria = new Categoria();
         $categoria->nome = $request->nome;
         $categoria->imagem = $request->imagem;
+
+        $input['logo']->store('categorias', 'public');
 
         if($categoria->save()){
             return redirect()->route('home');
