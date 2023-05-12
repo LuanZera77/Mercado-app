@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->float('preco');
-            $table->binary('imagem')->nullable;
+            $table->string('imagem')->nullable;
 
             $table->unsignedBigInteger('categoria_id');
  

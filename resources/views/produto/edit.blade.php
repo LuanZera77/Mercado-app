@@ -12,12 +12,12 @@
         @method("PUT")
 
         <div class="input-group mb-3">
-            <input type="text" name="nome" class="form-control" placeholder="Informe o nome" aria-label="Nomne" aria-describedby="NomeProduto" value="">
+            <input type="text" name="nome" class="form-control" placeholder="Informe o nome" aria-label="Nomne" aria-describedby="NomeProduto" value="{{$produto->nome}}">
           </div>
 
         <div class="input-group mb-3">
             <span class="input-group-text">R$</span>
-            <input type="text" name="preco" class="form-control" aria-label="Valor do produto" value="">
+            <input type="text" name="preco" class="form-control" aria-label="Valor do produto" value="{{$produto->preco}}">
         </div>  
 
         <div class="input-group mb-3">
@@ -28,7 +28,7 @@
         <div class="input-group mb-3">
             <label class="input-group-text" for="inputGroupSelect01">Categorias</label>
             <select name="categoria" class="form-select" id="inputGroupSelect01">
-                @foreach ($categoria as $item)
+                @foreach ($produto->categoria as $item)
                     <option value="{{$item->id}}">{{$item->nome}}</option>
                 @endforeach
             </select>

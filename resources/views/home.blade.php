@@ -41,7 +41,7 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                  <th scope="row"><img src="/categorias/{{$item->imagem}}" alt=""></th>
+                                  <th scope="row"><img src="/resources/img/categoria/Cereais-PhotoRoom.png-PhotoRoom" alt="" width="50px"></th>
                                     <td>{{$item->nome}}</td>
                                     <td>{{$item->preco}}</td>
                                     <td>
@@ -63,7 +63,7 @@
                                                 </ul>
                                             </div>
                                             <div class="modal-footer">
-                                              <a class="btn btn-primary" data-bs-toggle="modal" href="{{route('produtos.edit', $item->id)}}" role="button">Editar</a>
+                                                <a class="btn btn-primary" data-bs-toggle="modal" href="{{route('produtos.edit', $item->id)}}" role="button">Editar</a>
                                                 <form action="{{route('produtos.destroy', $item->id)}}" method="post">
 
                                                   @csrf

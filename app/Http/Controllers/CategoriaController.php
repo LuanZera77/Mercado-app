@@ -1,4 +1,4 @@
-'<?php
+<?php
 
 namespace App\Http\Controllers;
 
@@ -23,6 +23,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
+
         return view('categoria.create');
     }
 
@@ -32,13 +33,12 @@ class CategoriaController extends Controller
     public function store(Request $request)
 {
     $input = $request->validate([
-        'name' => ['required', 'string'],
-        'imagem' => ['required', 'file']
+        'nome' => ['required', 'string'],
+        'imagem' => ['required', 'file'],
     ]);
 
     $categoria = new Categoria();
-    $categoria->nome = $request->name;
-
+    $categoria->nome = $request->nome;
     $imagemPath = $request->file('imagem')->store('categorias', 'public');
     $categoria->imagem = $imagemPath;
 
@@ -94,4 +94,3 @@ class CategoriaController extends Controller
     }
 
 }
-'
