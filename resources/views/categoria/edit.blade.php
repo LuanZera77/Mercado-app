@@ -5,7 +5,7 @@
 
 @section('content')
 
-    <form action="{{route('categoria.edit', $categoria->id)}}" method="post">
+    <form enctype="multipart/form-data"  action="{{route('categoria.update', $categoria->id)}}" method="post">
 
         @csrf
         
@@ -21,7 +21,7 @@
         </div>
 
         <input type="submit" value="Editar" class="btn btn-outline-success m-2">
-        <input type="button" value="Cancelar" class="btn btn-outline-danger">
+        <a href="{{route('categoria.index')}}"class="btn btn-outline-danger">Cancelar</a>
 
     </form> 
 

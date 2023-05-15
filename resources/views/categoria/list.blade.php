@@ -1,5 +1,3 @@
-
-
 @extends('layouts.main')
 
 @section('title', 'Categoria')
@@ -41,7 +39,7 @@
                                       </ul>
                                   </div>
                                   <div class="modal-footer">
-                                    <a class="btn btn-primary" data-bs-toggle="modal" href="{{route('categoria.edit', $item->id)}}" role="button">Editar</a>
+                                    <a class="btn btn-primary" href="{{route('categoria.edit', $item->id)}}" role="button">Editar</a>
                                       <form action="{{route('categoria.destroy', $item->id)}}" method="post">
 
                                         @csrf

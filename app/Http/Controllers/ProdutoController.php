@@ -28,12 +28,17 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
+        // $input = $request->validade([
+        //     'imagem' => ['required', 'file']
+        // ]);
+
         $produto = new Produto();
         $produto->nome = $request->nome;
         $produto->preco = $request->preco;
-        $produto->imagem = $request->imagem;
+        $imagemPath = $request->file('imagem')->store('produto', 'public');
+        $produto->imagem = $imagemPath;
         $produto->categoria_id = $request->categoria;
-
+        
         if($produto->save()){
             return redirect()->route('home');
         }else{
@@ -55,7 +60,11 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
-        return view('produto.edit', ['produto' => $produto]);
+     //return $produto; 
+        return view('produto.edit', [
+            'produto' => $produto,
+            'categorias' => Categoria::where('id', '<>', $produto->categoria->id)->get()
+        ]);
     }
 
     /**
@@ -63,10 +72,11 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, Produto $produto)
     {
-        $produto->name = $request->name;
+        $produto->nome = $request->nome;
         $produto->preco = $request->preco;
-        $produto->imagem = $request->imagem;
-        $produto->categoria = $request->categorias;
+        $imagemPath = $request->file('imagem')->store('produto', 'public');
+        $produto->imagem = $imagemPath;
+        $produto->categoria_id = $request->categoria;
 
         if($produto->save()){
             return redirect()->route('home');

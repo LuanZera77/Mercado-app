@@ -5,7 +5,7 @@
 
 @section('content')
 
-        <form action="{{route('produtos.store')}}" method="post">
+        <form enctype="multipart/form-data" action="{{route('produtos.store')}}" method="post">
 
             @csrf
 
@@ -34,7 +34,7 @@
               </div>
 
             <input type="submit" value="Cadastrar" class="btn btn-outline-success m-2">
-            <input type="button" value="Cancelar" class="btn btn-outline-danger">
+            <a href="{{route('produtos.index')}}"class="btn btn-outline-danger">Cancelar</a>
         </form>
 
 @endsection

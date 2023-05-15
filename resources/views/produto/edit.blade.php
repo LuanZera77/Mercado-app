@@ -5,14 +5,14 @@
 
 @section('content')
 
-    <form action="{{route('produtos.update', $produto->id)}}" method="post">
+    <form enctype="multipart/form-data"  action="{{route('produtos.update', $produto->id)}}" method="post">
 
         @csrf
         
         @method("PUT")
 
         <div class="input-group mb-3">
-            <input type="text" name="nome" class="form-control" placeholder="Informe o nome" aria-label="Nomne" aria-describedby="NomeProduto" value="{{$produto->nome}}">
+            <input type="text" name="nome" class="form-control" placeholder="Informe o nome" aria-label="nome" aria-describedby="NomeProduto" value="{{$produto->nome}}">
           </div>
 
         <div class="input-group mb-3">
@@ -28,14 +28,16 @@
         <div class="input-group mb-3">
             <label class="input-group-text" for="inputGroupSelect01">Categorias</label>
             <select name="categoria" class="form-select" id="inputGroupSelect01">
-                @foreach ($produto->categoria as $item)
+                <option selected value="{{$produto->categoria->id}}">{{$produto->categoria->nome}}</option>
+                
+                @foreach ($categorias as $item)
                     <option value="{{$item->id}}">{{$item->nome}}</option>
                 @endforeach
             </select>
           </div>
 
         <input type="submit" value="Editar" class="btn btn-outline-success m-2">
-        <input type="button" value="Cancelar" class="btn btn-outline-danger">
+        <a href="{{route('produtos.index')}}"class="btn btn-outline-danger">Cancelar</a>
 
     </form> 
 

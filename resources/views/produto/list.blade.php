@@ -44,7 +44,7 @@
                                       </ul>
                                   </div>
                                   <div class="modal-footer">
-                                    <a class="btn btn-primary" data-bs-toggle="modal" href="{{route('produtos.edit', $produto->id)}}" role="button">Editar</a>
+                                    <a class="btn btn-primary" href="{{route('produtos.edit', $produto->id)}}" role="button">Editar</a>
                                       <form action="{{route('produtos.destroy', $produto->id)}}" method="post">
 
                                         @csrf

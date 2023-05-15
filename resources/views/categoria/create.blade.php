@@ -17,8 +17,9 @@
         </div>
 
         <input type="submit" value="Cadastrar" class="btn btn-outline-success m-2">
-        <input type="button" value="Cancelar" class="btn btn-outline-danger">
+        <a href="{{route('categoria.index')}}"class="btn btn-outline-danger">Cancelar</a>       
 
     </form> 
+    
 
 @endsection

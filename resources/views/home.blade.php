@@ -13,13 +13,13 @@
 
                 <!-- Card header -->
                 <div class="card-header">
-                    <div class="d-flex">
+                    <div class="d-flex flex-row align-items-center">
                         <div class="flex-shrink-0">
-                          <img src="..." alt="...">
+                          <img src="/storage/{{$setor->imagem}}" class="img-setor" alt="imagem do setor">
                         </div>
-                        <div class="flex-grow-1 ms-3">
+                        <div class="flex ms-3">
                             <!-- Nome da Categoria -->
-                            <h3>{{$setor->nome}}</h3>
+                            <h3 class="display-4">{{$setor->nome}}</h3>
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                  <th scope="row"><img src="/resources/img/categoria/Cereais-PhotoRoom.png-PhotoRoom" alt="" width="50px"></th>
+                                  <th scope="row"><img src="/storage/{{$item->imagem}}" class="img-produto" alt="imagem do produto"></th>
                                     <td>{{$item->nome}}</td>
                                     <td>{{$item->preco}}</td>
                                     <td>
@@ -63,7 +63,7 @@
                                                 </ul>
                                             </div>
                                             <div class="modal-footer">
-                                                <a class="btn btn-primary" data-bs-toggle="modal" href="{{route('produtos.edit', $item->id)}}" role="button">Editar</a>
+                                                <a class="btn btn-primary" href="{{route('produtos.edit', $item->id)}}" role="button">Editar</a>
                                                 <form action="{{route('produtos.destroy', $item->id)}}" method="post">
 
                                                   @csrf
